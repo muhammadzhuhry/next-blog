@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { CProviders } from "./cproviders";
+import LayoutContainer from "./layout-container";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <CProviders>
-          {children}
+          <LayoutContainer>
+            {children}
+          </LayoutContainer>
         </CProviders>
       </body>
     </html>
